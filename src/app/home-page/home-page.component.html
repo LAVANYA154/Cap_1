@@ -1,0 +1,101 @@
+  <!-- cards -->
+  <app-license></app-license>
+
+  <div class="d-flex flex-row justify-content-between">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Activated Employees</h5>
+            <p class="card-text">{{users}}</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Requested Employees</h5>
+            <p class="card-text">{{notactivated}}</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Softwares available</h5>
+            <p class="card-text">{{softwares}}</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">Devices available</h5>
+            <p class="card-text">{{devices}}</p>
+        </div>
+    </div>
+</div>
+    <!-- First Row -->
+    <div class="row">
+      <!-- Bar Chart -->
+      <div class="col-md-6">
+        <div class="card card1">
+          <div class="card1-header">
+           <u> Employees Count by License Name </u>
+          </div>
+          <div class="card-body card1-body">
+            <!-- <canvas id="line-chart"></canvas> -->
+            <canvas class="canvas" id="line-chart"></canvas>
+
+          </div>
+        </div>
+      </div>
+      <!-- Pie Chart -->
+      <div class="col-md-6">
+        <div class="card card1">
+          <div class="card1-header">
+            <u>Category Distribution</u>
+          </div>
+          <div class="card-body card1-body">
+            <!-- <canvas id="networkAssetsPieChart"></canvas> -->
+            <canvas class="canvas" id="networkAssetsPieChart" ></canvas>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+  <!-- table -->
+
+<div class="container mt-4">
+  <h2>Activated employees</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>License Cost</th>
+        <th>License Validity</th>
+        <th>Vendor Name</th>
+        <th>Category</th>
+        <th>Email</th>
+        <th>Installation Date</th>
+        <th>Expiration Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detail of details">
+        <td>{{ detail.id }}</td>
+        <td>{{ detail.name }}</td>
+        <td>{{ detail.description }}</td>
+        <td>{{ detail.cost }}</td>
+        <td>{{ detail.validity }}</td>
+        <td>{{ detail.vendorName }}</td>
+        <td>{{ detail.category }}</td>
+        <td>{{ detail.username }}</td>
+        <td>{{ detail.systemDate }}</td>
+        <td>{{ detail.expiryDate }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-template #nodetails>
+    <p>No details found.</p>
+  </ng-template>
+</div>
+  <router-outlet></router-outlet>
+
+  

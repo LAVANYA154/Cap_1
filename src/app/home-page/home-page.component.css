@@ -1,0 +1,153 @@
+
+.h4
+{
+    text-align: center;
+}
+/* Apply custom styles to the container */
+.d-flex {
+    margin: 20px; /* Add some margin around the container */
+  }
+  
+  /* Style for individual cards */
+  .card {
+    width: 18rem;
+    margin-right: 10px; /* Add spacing between cards */
+    border: 1px solid #ccc; /* Add a border around the cards */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Scale the card on hover for a subtle effect */
+  }
+  
+  .card-body {
+    text-align: center; /* Center text content within the card */
+  }
+  
+  .card-title {
+    font-size: 1.25rem; /* Increase the title font size */
+  }
+  
+  .card-text {
+    font-size: 1rem; /* Adjust the text font size */
+  }
+  
+  /* Style individual cards with different background colors */
+  .card:nth-child(odd) {
+    background-color: #f0f0f0; /* Light gray for odd cards */
+  }
+  
+  .card:nth-child(even) {
+    background-color: #e0e0e0; /* Slightly darker gray for even cards */
+  }
+
+  /* table */
+  /* Custom Styles for the Activated Users Table */
+.container {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+  
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+/* table */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+.table thead {
+  background-color: #007bff;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.page-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  background-color: #fff;
+}
+
+.table th {
+  background-color: #0875b9;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.no-details-message {
+  font-style: italic;
+  color: #999;
+}
+
+/* CHARTS */
+  .card1-body {
+    margin-top:20px;
+    padding: 10px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
+  } 
+
+  .card1 {
+    border: 1px solid #ccc;
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4); */
+    text-align: center;
+    margin: 10px;
+    padding: 0px;
+    background-color: #f5f5f5;
+    width: 700px; /* Set the desired width */
+    height: 500px;
+   
+  }
+  
+  .card1-header {
+    font-style: italic;
+    /* font-display: initial; */
+    /* text-decoration: none; */
+    margin-bottom: auto;
+    font-size:larger;
+  }
+  canvas
+  {
+    height:400px !important;
+    width:500.4px !important;
+  }

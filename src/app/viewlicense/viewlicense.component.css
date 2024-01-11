@@ -1,0 +1,93 @@
+/* Apply a border to the table and round the corners */
+.table {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+/* Style table headers */
+.table th {
+  background-color: #0875b9;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid #11549b;
+}
+
+/* Style even rows with a background color */
+.table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style odd rows with a different background color */
+.table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+/* Center the content in table cells */
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Style the buttons */
+.button-group button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin: 5px;
+}
+
+/* Style the Font Awesome icons in buttons */
+.button-group button > fa-icon {
+  color: #0b3868;
+}
+
+/* Hover effect for buttons */
+.button-group button:hover {
+  color: #09c2fa;
+  transition: color 0.3s;
+}
+
+/* Add padding and margin to the search input */
+.filter-item input[type="text"] {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the filter dropdown */
+.form-group select {
+  padding: 5px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Style the editing inputs */
+.table input[type="text"],
+.table input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add padding to table cells */
+.table td {
+  padding: 5px;
+}
+
+/* Style the button group */
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Add spacing between buttons */
+.button-group button {
+  margin: 0 5px;
+}

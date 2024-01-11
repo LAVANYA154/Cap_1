@@ -1,0 +1,41 @@
+<app-license></app-license>
+
+
+<div class="container mt-4">
+  <h2>Requested Employee List</h2>
+  <div *ngIf="details.length > 0; else noUsers">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>License Cost</th>
+          <th>License Validity</th>
+          <th>Vendor Name</th>
+          <th>Category</th>
+          <th>Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let detail of details">
+          <td>{{ detail.id }}</td>
+          <td>{{ detail.name }}</td>
+          <td>{{ detail.description }}</td>
+          <td>{{ detail.cost }}</td>
+          <td>{{ detail.validity }}</td>
+          <td>{{ detail.vendorName }}</td>
+          <td>{{ detail.category }}</td>
+          <td>{{ detail.username }}</td>
+          <td>
+            <button *ngIf="!detail.status" class="btn btn-primary" (click)="activateUser(detail)">Activate</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noUsers>
+    <p>No employees found.</p>
+  </ng-template>
+</div>

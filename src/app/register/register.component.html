@@ -1,0 +1,84 @@
+<div class="register-container">
+  <h2 style="margin-bottom: 30px;">Registration Form</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <!-- <label for="firstName">First Name</label> -->
+      <input type="text" id="firstName" formControlName="firstName" placeholder="FirstName"
+      required minlength="3" maxlength="120">
+      <p *ngIf="registerForm.get('firstName')?.errors?.['required'] && registerForm.get('firstName')?.touched">
+        <small class="text-danger">Please enter your Firstname.</small>
+      <div *ngIf="registerForm.get('firstName')?.hasError('minlength')">
+        <small class="text-danger"> First Name should have a minimum of 3 characters.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- <label for="lastName">Last Name</label> -->
+      <input type="text" id="lastName" formControlName="lastName" placeholder="LastName" minlength="3" maxlength="120">
+      <div *ngIf="registerForm.get('lastName')?.hasError('minlength')">
+        <small class="text-danger">Last Name should have a minimum of 3 characters.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- <label for="email">Email Address</label> -->
+      <input type="email" id="email" formControlName="email" placeholder="E-mail" >
+      <p *ngIf="registerForm.get('email')?.errors?.['required'] && registerForm.get('email')?.['touched']">
+        <small class="text-danger"> This is required</small></p> 
+      <div *ngIf="registerForm.get('email')?.hasError('email')">
+        <small class="text-danger">Please enter a valid email address.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- <label for="password">Password</label> -->
+      <input
+        type="password"
+        id="password"
+        formControlName="password" placeholder="Password"
+        required
+        minlength="8" 
+        pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[@#$%^&+=]).*$">
+      <p *ngIf="registerForm.get('password')?.errors?.['required'] && registerForm.get('password')?.['touched']"> 
+      <small class="text-danger">Password is required.</small> </p>
+      <p *ngIf="registerForm.get('password')?.hasError('minlength')">
+        <small class="text-danger">Password must be at least 8 characters long.</small>
+      </p>
+      <p *ngIf="registerForm.get('password')?.hasError('pattern')">
+        <small class="text-danger">Password must contain at least one digit, one letter, and one special character.</small>
+      </p>
+    </div>
+    <div class="form-group">
+      <!-- <label for="confirmPassword">Confirm Password</label> -->
+      <input
+        type="password"
+        id="cnfrmpassword"
+        formControlName="cnfrmpassword" 
+        placeholder="Confirm password"
+        required
+      >
+      <p *ngIf="registerForm.get('cnfrmpassword')?.errors?.['required'] && registerForm.get('cnfrmpassword')?.touched">
+        <small class="text-danger">This is required</small>
+      </p>
+      <div *ngIf="registerForm.hasError('mustMatch')">
+        <small class="text-danger">Passwords must match.</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- <label for="employeeId">Employee ID</label> -->
+      <input type="text" id="employeeID" formControlName="employeeID" placeholder="Employee ID  (e.g)P8794"  pattern="^[Pp][0-9]{4}$" required>
+      <p *ngIf="registerForm.get('employeeID')?.errors?.['required'] && registerForm.get('employeeID')?.['touched']">
+        <small class="text-danger">This is required</small></p> 
+      <div *ngIf="registerForm.get('employeeID')?.hasError('pattern')">
+       <small class="text-danger"> Employee ID should be in the pattern P8794 (uppercase 'P' followed by 4 numbers).</small>
+      </div>
+    </div>
+    <div class="form-group">
+      <!-- <label for="contactNumber">Contact Number</label> -->
+      <input type="text" id="contactNumber" formControlName="contactNumber" required pattern="^[6-9]\d{9}$" placeholder="Phone Number">
+      <p *ngIf="registerForm.get('contactNumber')?.errors?.['required'] && registerForm.get('contactNumber')?.['touched']">
+        <small class="text-danger">This is required</small></p> 
+      <div *ngIf="registerForm.get('contactNumber')?.hasError('pattern')">
+        <small class="text-danger">Contact Number should start with 6, 7, 8, or 9 and be 10 digits long.</small>
+      </div>
+    </div>
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</div>

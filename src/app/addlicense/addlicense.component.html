@@ -1,0 +1,56 @@
+<app-license></app-license>
+<div class="container center">
+  <h2>Add New License</h2>
+  <form [formGroup]="licenseForm" (ngSubmit)="saveLicense()" >
+       
+    <!-- Name -->
+    <div class="form-group">
+      <label for="licenseKey">Name:</label>
+      <input type="text" class="form-control" id="licenseKey" formControlName="name" required>
+      <p *ngIf="licenseForm.get('name')?.errors?.['required'] && licenseForm.get('name')?.['touched']">This is required</p>
+      <!-- <p *ngIf="licenseForm.get('name')?.errors?.['minlength'] && licenseForm.get('name')?.['touched']">Should have 8 letters</p> -->
+    </div>
+    <!-- Roll no -->
+    <div class="form-group">
+      <label for="softwareName">Description:</label>
+      <input type="text" class="form-control" id="softwareName" formControlName="description" required>
+      <p *ngIf="licenseForm.get('description')?.errors?.['required'] && licenseForm.get('description')?.['touched']">This is required</p>
+    </div>
+
+    <!-- Vendor Name -->
+    <div class="form-group">
+      <label for="vendorName">Vendor Name:</label>
+      <input type="text" class="form-control" id="vendorName" formControlName="vendorName" required>
+      <p *ngIf="licenseForm.get('vendorName')?.errors?.['required'] && licenseForm.get('vendorName')?.['touched']">Vendor Name is required</p>
+    </div>
+
+    <!-- License Cost -->
+    <div class="form-group">
+      <label for="cost">License Cost: (in USD)</label>
+      <input type="number" class="form-control" id="cost" formControlName="cost" required>
+      <p *ngIf="licenseForm.get('cost')?.errors?.['required'] && licenseForm.get('cost')?.['touched']">License Cost is required</p>
+    </div>
+
+    <!-- License Validity -->
+    <div class="form-group">
+      <label for="validity">License Validity: (in days)</label>
+      <input type="number" class="form-control" id="validity" formControlName="validity" required>
+      <p *ngIf="licenseForm.get('validity')?.errors?.['required'] && licenseForm.get('validity')?.['touched']">License Validity is required</p>
+    </div>
+
+    <!-- Category -->
+    <!-- Category -->
+<div class="form-group">
+  <label for="category">Category:</label>
+  <select class="form-control" id="category" formControlName="category" required>
+    <option value="All">All Categories</option>
+    <option value="Device">Device</option>
+    <option value="Software">Software</option>
+  </select>
+  <p *ngIf="licenseForm.get('category')?.errors?.['required'] && licenseForm.get('category')?.touched">Category is required</p>
+</div>
+
+<!-- Add License Button -->
+<button type="submit" class="btn btn-primary" [disabled]="licenseForm.invalid || licenseForm.get('category')?.value === 'All'">Add License</button>
+  </form>
+</div>

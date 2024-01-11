@@ -1,0 +1,62 @@
+<app-userpage></app-userpage>
+<!-- <ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/renewal">Renewal</a>
+  </li>
+</ul> -->
+
+<router-outlet></router-outlet>
+
+<div class="text-center" style="width: 100%;">
+  <div class="form-group">
+    <label for="category">Filter by Category:</label>
+    <select class="form-control" id="category" [(ngModel)]="filterCategory">
+      <option value="All">All</option>
+      <option value="Device">Device</option>
+      <option value="Software">Software</option>
+    </select>
+  </div>
+</div>
+
+<div class="container mt-4">
+  <h2>View All Licenses</h2>
+  <div *ngIf="licenses.length > 0; else noLicenses">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Vendor Name</th>
+          <th>License Cost</th>
+          <th>License Validity</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let license of filterLicensesByCategory()">
+          <td>{{ license.id }}</td>
+          <td>{{ license.name }}</td>
+          <td>{{ license.description }}</td>
+          <td>{{ license.vendorName }}</td>
+          <td>{{ license.cost }}</td>
+          <td>{{ license.validity }}</td>
+          <td>{{ license.category }}</td>
+          <td>
+            <button
+  [disabled]="clickedLicenses[license.id]"
+  class="btn btn-request-license"
+  (click)="purchaseSoftware(license, username)"> Request License
+
+  </button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noLicenses>
+    <p>No licenses found.</p>
+  </ng-template>
+</div>

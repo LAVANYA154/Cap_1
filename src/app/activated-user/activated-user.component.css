@@ -1,0 +1,62 @@
+/* Custom Styles for the Activated Users Table */
+.container {
+  margin-top: 20px;
+  font-family: Arial, sans-serif;
+}
+  
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: initial;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  border-radius: 500px;
+}
+
+.table th {
+  background-color: #0875b9;
+  color: white;
+  padding: 10px;
+  text-align: left;
+  font-weight: bold;
+  border: 1px solid #11549b;
+}
+
+.table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: left;
+}
+
+table th, table td {
+  padding: 50px;
+   /* Adjust this value to increase or decrease the spacing */
+
+  margin-right:50px;
+  }
+
+
+/* Style even rows with a background color */
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+/* Style odd rows with a different background color */
+.table tr:nth-child(odd) {
+  background-color: #0e0d0d;
+}
+/* Ensure Expiry Date in a Single Line */
+/* table td:nth-child(9),
+table th:nth-child(9) {
+  white-space: nowrap;
+} */
+
+
+.no-details-message {
+  font-style: italic;
+  color: #999;
+}

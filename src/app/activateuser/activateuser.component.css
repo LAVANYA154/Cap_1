@@ -1,0 +1,35 @@
+/* Style the table container */
+.container {
+  margin-top: 20px;
+}
+
+/* Style the table headers */
+th {
+  text-align: center;
+  background-color:#0875b9;
+  color: #fff; /* Text color */
+  font-weight: bold;
+}
+
+/* Style the table rows */
+td {
+  text-align: center;
+}
+
+/* Style the "Activate" button */
+.btn-primary {
+  background-color: #2978cb; /* Primary button background color */
+  color: #fff; /* Text color */
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Style the "No users found" message */
+#noLicenses {
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #ff0000; /* Red color for emphasis */
+}

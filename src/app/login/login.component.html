@@ -1,0 +1,40 @@
+<div class="login-container">
+  <!-- <p *ngIf="s">Error</p> -->
+  <h4 class="h4">
+     Welcome to License Engine
+    </h4>
+     <fa-icon class="fa-2x" [icon]="faLock"></fa-icon>
+     <div *ngIf="invalid" class="alert alert-danger">
+            {{ invalid }}
+     </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <!-- <label for="username">Username</label> -->
+        <input type="text" id="username" formControlName="username" placeholder="Email address"   required>
+        <p *ngIf="loginForm.get('username')?.errors?.['required'] && loginForm.get('username')?.['touched']">
+          <small class="text-danger">Email is required</small>
+        </p>
+        <div *ngIf="loginForm.get('username')?.hasError('username')">
+          Please enter a valid email address.
+        </div>
+      </div>
+      <div class="form-group">
+        <!-- <label for="password">Password</label> -->
+        <input type="password" id="password" formControlName="password" placeholder="Password" required
+        minlength="8" 
+        pattern="^(?=.*\d)(?=.*[a-zA-Z])(?=.*[@#$%^&+=]).*$">
+      <p *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.['touched']"> 
+             <small class="text-danger"> Password is required.</small>
+      </p>
+      <p *ngIf="loginForm.get('password')?.hasError('minlength','pattern')">
+        <small class="text-danger">Enter valid password</small>
+      </p>
+      
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+    </form>
+    <div class="new-user">
+      <p>New User? <a routerLink="/register">Register</a></p>
+    </div>
+  </div>
+  
